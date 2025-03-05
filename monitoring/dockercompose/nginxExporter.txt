@@ -1,0 +1,17 @@
+docker run  --restart=always -p 9113:9113   nginx/nginx-prometheus-exporter:0.10.0    -nginx.scrape-uri=http://IPLOCAL:8585/metrics   -web.telemetry-path=/metrics
+
+
+
+
+change config nginx
+
+
+
+
+server {
+        listen 8585;
+           location /metrics {
+                stub_status on;
+                }
+
+        }
